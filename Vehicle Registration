@@ -1,0 +1,119 @@
+<?php
+
+/*The Department of Motor vehicles would like to keep track of the all the vehicle registration numbers. Your task is to create a parent class called Vehicle and two subclasses called Car and Truck.*/
+
+/*a. The Vehicle class has the properties owner name, registration number and doors. */
+
+	class Vehicle{
+		protected $ownerName;
+		protected $RegNumber;
+		protected  $doors;
+		
+/*b. In the Vehicle class doors must be set to the value of 2. */		
+		public function getD(){
+		
+			return "Number of Doors: ".$this->doors = 2 . '<br>';
+			
+		}
+		public function setD($doors){
+		
+			$this->doors = $doors;
+						
+		}
+		
+/*c. Create a function called takeownership in the vehicle class and pass two variables in its parameter. This function is used to initialize the owner and registration number to a value. */	
+	
+	public function setTakeOwnership($ownerName, $RegNumber){
+		
+		$this->ownerName = "$ownerName";
+		$this->RegNumber = "$RegNumber";
+		
+	}
+	
+/*d.In the class called vehicle create a function called display to output the owner name and registration number. */
+	
+	public function display(){
+		
+		return "Owners Name: $this->ownerName <br> Registration Number: $this->RegNumber <br>";
+		
+		//return "Owners Name:  ".$this->ownerName . "Registration Number: ".$this->RegNumber;
+		
+		//return "Owners Name: " . $this->ownerName .'<br>'"Registration Number: ".$this->RegNumber".'<br>';
+		
+	}
+}//end of vehicle class
+
+/*e. Create a sub-class Car from the parent class Vehicle and it should have the two properties: number of doors which must be set to 2 and colour which must be set to “black”. */	
+
+	class Car extends Vehicle{
+	
+		private $color;
+		
+		public function getD(){
+		
+			return "Number of Doors: ".$this->doors =2;
+		}
+		
+		public function getClr(){
+		
+			return "Color of Car: ".$this->color ="black";
+		}
+		public function setD($color){
+		
+			$this->color = $color;
+		}
+}	
+	
+/* f. Create a sub-class Truck from the parent class Vehicle and it should have the property: number of axles which must be set to 3. */	
+	
+	class Truck extends Vehicle{
+	
+		private $no_of_axel;
+		
+	public function getAxel(){
+		return "Number of Axels: ".$this->no_of_axel=3;
+		
+	}
+	public function setAxel($no_of_axel){
+		
+		$this->no_of_axel = $no_of_axel;
+		
+	}
+}		
+/* g. Create two instantiated objects, one for car and the other for truck. */
+	
+
+		$myCars = new Car();
+		echo "--------------------Car Owner's Credentials----------------------".'<br>';
+		
+/* h. Write the code where Paul Cory with registration # 3456 has taken ownership of the car. */
+
+		$myCars->setTakeOwnership('Paul Cory', 3456);
+
+/* i. Output the information using the display function. */	
+
+		echo $myCars->display();
+
+/* j. Output the number of doors for the car. */
+
+		echo $myCars->getD();
+
+/* k. Display the colour of the car. */
+
+		echo '<br>'. $myCars->getClr();
+
+		$myTrk = new Truck();
+		echo '<br>'. "--------------------Truck Owner's Credentials----------------------".'<br>';
+
+/* l. Write the code where Peter Hall with registration # 8906 has taken ownership of the truck. */
+
+		$myTrk->setTakeOwnership('Peter Hall', 8906);
+
+/* m. Output the information using the display function. */
+
+		echo $myTrk->display();
+
+/* n. Output the number of doors for the truck. */
+
+		echo $myTrk->getAxel();
+?>
